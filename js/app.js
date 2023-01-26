@@ -8,12 +8,14 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { //eslint-disable-line
-
+    function sum(a, b) {
+        let mySum = a + b;
+        let myString = "The sum of " + a + " and " + b + " is " + mySum + ".";
+        return [mySum, myString];
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -26,12 +28,15 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-
-}
-
-// Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+function multiply(a, b) {
+    let myMul = a * b;
+    let myString = "The product of " + a + " and " + b + " is " + myMul + ".";
+    return [myMul, myString];
+    //eslint-disable-line
+  }
+  
+  // Here is the test for multiply(); uncomment it to run it
+  testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -47,12 +52,30 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
+function sumAndMultiply(a, b, c) {
+    let myTotalSum = sum(sum(a, b)[0], c);
+    let myTotalMul = multiply(multiply(a, b)[0], c);
+    let mySumString =
+      a + " and " + b + " and " + c + " sum to " + myTotalSum[0] + ".";
+    let myMulString =
+      "The product of " +
+      a +
+      " and " +
+      b +
+      " and " +
+      c +
+      " is " +
+      myTotalMul[0] +
+      ".";
+  
+    return [myTotalSum[0], myTotalMul[0], mySumString, myMulString];
+    
+    //eslint-disable-line
 
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
